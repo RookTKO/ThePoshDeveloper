@@ -30,10 +30,9 @@ twitter_username: RookTKO
 github_username:  RookTKO
 
 # Build settings
-# remote_theme: pmarsceill/just-the-docs
-theme: "just-the-docs"
-plugins:
-  - jekyll-feed
+remote_theme: pmarsceill/just-the-docs
+# theme: "just-the-docs"
+
 
 
   #Search enabled on the site

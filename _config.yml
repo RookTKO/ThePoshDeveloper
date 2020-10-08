@@ -11,7 +11,9 @@ github_username:  RookTKO
 
 # Build settings
 theme: "just-the-docs"
-
+plugins:
+  - jekyll-feed
+#  - jekyll-include-cache
 
 
   #Search enabled on the site

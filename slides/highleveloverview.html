@@ -17,42 +17,141 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>
-						PowerShell High Level Overview:
-					</h1>
-					<h2>
-						A Top Down Perspective in a TL;DR Format
-					</h2>
+					<h3>
+						PowerShell High Level Overview
+					</h3>
+					<p>
+						<small>A Top Down Perspective in a TL;DR Format</small>
+					</p>
 				</section>
 				<section>
 					<section>
-					What is a Cmdlet?
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">The nice thing about standards is that there are so many to choose from</q> and block:
-					</p>
-					<blockquote cite="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7">
-						&ldquo;A Cmdlet is a lightweight command that is used in the PowerShell environment.&rdquo;
-					</blockquote>
-					<p>
-						ELI5: Any command that consists of the verb - noun syntax that you run in a powershell is a cmdlet.
-					</p>
-					There are two ways to create a Cmdlet:
-					1. Binary Modules (Using C#)
-					2. Script Modules (Using PS)
+						<h3>What is a Cmdlet?</h3>
+						<blockquote cite="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7">
+							&ldquo;A Cmdlet is a lightweight command that is used in the PowerShell environment.&rdquo;
+						</blockquote>
+						<p class="fragment highlight-blue">
+							Any command that consists of the verb-noun syntax structure that you run in a powershell is a cmdlet.
+						</p>
+						<p>
+							There are two ways to create a Cmdlet:
+						</p>
+						<ol>
+							<li class="fragment fade-up">
+								Binary Modules (Using .Net Languages : C#, VB.NET, C++ and F#)
+							</li>
+							<li class="fragment fade-up">
+								Script Modules (Using PS)
+							</li>
+						</ol>
 					</section>
 					<section>
-						Pros & Cons of using Binary Modules
+						 <h3>Binary Modules</h3>
+						 <table class="fragment fade-up">
+							 <thead>
+								 <tr>
+									 <th>Pros</th>
+									 <th>Cons</th>
+								 </tr>
+							 </thead>
+							 <tbody>
+								 <tr>
+									 <td class="fragment highlight-green">.Net Framework & Lanuages</td>
+									 <td class="fragment highlight-red">Still need to know PowerShell </td>
+
+								 </tr>
+								 <tr >
+									<td class="fragment highlight-green">More secure </td>
+									 <td class="fragment highlight-red">Not everyone will know how to modify it</td>
+								 </tr>
+								 <tr >
+									<td class="fragment highlight-green">More efficient doing certain tasks & faster</td>
+								 </tr>
+
+							 </tbody>
+						 </table>
 					</section>
 					<section>
-						Pros & Cons of using Script Modules
+						<h3>Script Modules</h3>
+						<table class="fragment fade-up">
+							<thead>
+								<tr>
+									<th>Pros</th>
+									<th>Cons</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="fragment highlight-green">Everyone can modify the content</td>
+									<td class="fragment highlight-red">Everyone can modify the content</td>
+								</tr>
+								<tr>
+									<td class="fragment highlight-green">Only one language to know</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
 					</section>
 				</section>
 
 				<section>
-
+					<section>
+						<h3>What are Modules?</h3>
+						<blockquote cite="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7">
+							&ldquo;A module is a package that contains PowerShell commands, such as cmdlets, providers, functions, workflows, variables, and aliases.&rdquo;
+						</blockquote>
+						<p>
+							<small>
+								There are 4 types of Modules:
+							</small>
+						</p>
+						<ol>
+							<li>
+								Dynamic Modules
+							</li>
+							<li>
+								Manifest Modules
+							</li>
+							<li>
+								Binary Modules
+							</li>
+							<li>
+								Script Modules
+							</li>
+						</ol>
+					</section>
+					<section>
+						<h3>Dynamic Modules</h3>
+					</section>
+					<section>
+						<h3>Manifest Modules</h3>
+					</section>
 				</section>
 
+				<section>
+					<section>
+						Script Module
+					</section>
+					<section>
+						Script Module Recipe
+					</section>
+					<section>
+						Advanced Functions
+					</section>
+				</section>
 
+				<section>
+					<section>
+						Binary Module
+					</section>
+					<section>
+						Binary Module Recipe
+					</section>
+				</section>
+
+				<section>
+					Wrap up
+				</section>
 			</div>
 		</div>
 
@@ -66,7 +165,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+				slideNumber: true,
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});

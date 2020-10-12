@@ -33,19 +33,36 @@
 						<p class="fragment highlight-blue">
 							Any command that consists of the verb-noun syntax structure that you run in a powershell is a cmdlet.
 						</p>
-						<p>
-							There are two ways to create a Cmdlet:
-						</p>
+					</section>
+					<section>
+						<h3>Blue or Red Pill?</h3>
+						<aside class="notes">CDXML - Cmdlet Definition XML turns windows management infrastructure classes into resuable cmdlets using xml.</aside>
 						<ol>
 							<li class="fragment fade-up">
-								Binary Modules (Using .Net Languages : C#, VB.NET, C++ and F#)
+								Binary Modules using .Net framework languages:
+								<ul>
+									<li>
+										C#
+									</li>
+									<li>
+										VB.NET
+									</li>
+									<li>
+										C++
+									</li>
+									<li>
+										F#
+									</li>
+								</ul>
+
 							</li>
 							<li class="fragment fade-up">
-								Script Modules (Using PS)
+								Script Modules using PowerShell syntax
 							</li>
 						</ol>
 					</section>
-					<section>
+
+					<section >
 						 <h3>Binary Modules</h3>
 						 <table class="fragment fade-up">
 							 <thead>
@@ -66,6 +83,7 @@
 								 </tr>
 								 <tr >
 									<td class="fragment highlight-green">More efficient doing certain tasks & faster</td>
+									<td class="fragment highlight-red">Once loaded into session it cannot be unloaded.</td>
 								 </tr>
 
 							 </tbody>
@@ -86,7 +104,7 @@
 									<td class="fragment highlight-red">Everyone can modify the content</td>
 								</tr>
 								<tr>
-									<td class="fragment highlight-green">Only one language to know</td>
+									<td class="fragment highlight-green">Low barrier to entry </td>
 									<td></td>
 								</tr>
 							</tbody>
@@ -98,14 +116,14 @@
 					<section>
 						<h3>What are Modules?</h3>
 						<blockquote cite="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7">
-							&ldquo;A module is a package that contains PowerShell commands, such as cmdlets, providers, functions, workflows, variables, and aliases.&rdquo;
+								<a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7">
+									&ldquo;A module is a package that contains PowerShell commands, such as cmdlets, providers, functions, workflows, variables, and aliases.&rdquo;
+								</a>
 						</blockquote>
-						<p>
-							<small>
+						<p class="fragment fade-up">
 								There are 4 types of Modules:
-							</small>
 						</p>
-						<ol>
+						<ol class="fragment fade-up">
 							<li>
 								Dynamic Modules
 							</li>
@@ -122,35 +140,77 @@
 					</section>
 					<section>
 						<h3>Dynamic Modules</h3>
+						<blockquote cite="https://docs.microsoft.com/en-us/powershell/scripting/developer/module/understanding-a-windows-powershell-module?view=powershell-7">
+							<a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/module/understanding-a-windows-powershell-module?view=powershell-7">
+								&ldquo;A dynamic module is a module that is not loaded from, or saved to, a file. Instead, they are created dynamically by a script, using the New-Module cmdlet. &rdquo;
+							</a>
+						</blockquote>
+						<p class="fragment fade-up">There are two types of dynamic modules:</p>
+						<ol class="fragment fade-up">
+							<li>Script Modules</li>
+							<li>Dynamic Modules</li>
+						</ol>
+					</section>
+					<section>
+						<h3>Dynamic Modules Usecases</h3>
+						<blockquote cite="https://livebook.manning.com/book/windows-powershell-in-action-third-edition/chapter-10/14">
+							<a href="https://livebook.manning.com/book/windows-powershell-in-action-third-edition/chapter-10/14">
+								&ldquo;You use a dynamic module rather than a regular, static module when you want to achieve one of the following: encapsulate local state in scripts, implement a dynamic equivalent of the closure feature found in other languages, or simplify the way you create custom objects. &rdquo;
+							</a>
+						</blockquote>
 					</section>
 					<section>
 						<h3>Manifest Modules</h3>
+						<blockquote cite="https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-module-manifest?view=powershell-7">
+							<a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-module-manifest?view=powershell-7">
+								&ldquo;A module manifest is a PowerShell data file (.psd1) that describes the contents of a module and determines how a module is processed.  &rdquo;
+							</a>
+						</blockquote>
+						<aside class="notes">Always generate a new manifest module with the New-ModuleManifest command.</aside>
+						<ol>
+							<li>Store metadata about the module</li>
+							<li>Enforce dependency and module requirements</li>
+							<li>Encapsulation of functions and variables</li>
+						</ol>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						Script Module
+						<h3>Script Module</h3>
+						<blockquote cite="https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-script-module?view=powershell-7">
+							<a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-script-module?view=powershell-7l">
+								&ldquo;A script module is any valid PowerShell script saved in a .psm1 extension.&rdquo;
+							</a>
+						</blockquote>
+						<p>They are essential just another form of scripts.</p>
+
 					</section>
 					<section>
-						Script Module Recipe
-					</section>
-					<section>
-						Advanced Functions
+						<h3>Advanced Functions</h3>
+						<blockquote cite="https://ss64.com/ps/syntax-function-advanced.html">
+							<a href="https://ss64.com/ps/syntax-function-advanced.html">
+								&ldquo;An Advanced Function is one that contains either a [cmdletbinding()] attribute or the Parameter attribute, or both.&rdquo;
+							</a>
+						</blockquote>
+						<a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7">
+							Gives you access to Common Parameters such
+						</a>
+
 					</section>
 				</section>
 
 				<section>
-					<section>
-						Binary Module
-					</section>
-					<section>
-						Binary Module Recipe
-					</section>
+						<h3>Binary Module</h3>
+						<blockquote cite="https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-binary-module?view=powershell-7">
+							<a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/module/how-to-write-a-powershell-binary-module?view=powershell-7">
+								&ldquo;A binary module can be any assembly (.dll) that contains cmdlet classes.&rdquo;
+							</a>
+						</blockquote>
 				</section>
 
 				<section>
-					Wrap up
+					Comments, Concerns and Complaints?
 				</section>
 			</div>
 		</div>

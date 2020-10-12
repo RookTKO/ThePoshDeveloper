@@ -183,8 +183,13 @@
 								&ldquo;A script module is any valid PowerShell script saved in a .psm1 extension.&rdquo;
 							</a>
 						</blockquote>
-						<p>They are essential just another form of scripts.</p>
-
+						<p class="fragment fade-up">They are essentially just another form of scripts and can consist of any of the following:</p>
+						<ul class="fragment fade-up">
+							<li>Basic Functions</li>
+							<li>Filter Functions</li>
+							<li>WorkFlow Functions</li>
+							<li>Advanced Functions</li>
+						</ul>
 					</section>
 					<section>
 						<h3>Advanced Functions</h3>
@@ -193,10 +198,37 @@
 								&ldquo;An Advanced Function is one that contains either a [cmdletbinding()] attribute or the Parameter attribute, or both.&rdquo;
 							</a>
 						</blockquote>
-						<a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7">
+						<a class="fragment fade-up" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7">
 							Gives you access to Common Parameters such
 						</a>
 
+					</section>
+					<section>
+						<h3>Advanced Function Example</h3>
+						<pre><code data-trim data-line-numbers="2,4-8">
+
+							function Test-FizzBuzz{
+								[CmdletBinding()]
+									param (
+									[Parameter(Mandatory = $false, Position = 0)]
+									$MinNum = 1,
+
+									[Parameter(Mandatory = $false, Position = 1)]
+									$MaxNum = 100
+									)
+
+									for ($i = $MinNum; $i -le $MaxNum; $i++) {
+									$output = ""
+
+									if ($i % 3 -eq 0) { $output += "Fizz" }
+									if ($i % 5 -eq 0) { $output += "Buzz" }
+									if ($output -eq "") { $output = $i }
+
+									Write-output $output
+									}
+								}
+
+							</code></pre>
 					</section>
 				</section>
 
@@ -210,7 +242,7 @@
 				</section>
 
 				<section>
-					Comments, Concerns and Complaints?
+					<h3>Comments, Concerns or Complaints?</h3>
 				</section>
 			</div>
 		</div>

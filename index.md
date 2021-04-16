@@ -2,12 +2,11 @@
 layout: default
 title: Home
 nav_order: 1
-description: "Just the Docs is a responsive Jekyll theme with built-in search that is easily customizable and hosted on GitHub Pages."
+description: "Learn PowerShell from a Developer standpoint."
 permalink: /
 ---
 
 
-[Slide Show](slides/index.html)
 [PowerShell High Level Overview : A Top Down Perspective in a TL;DR FormatSlide Show](slides/highleveloverview.html)
 Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
